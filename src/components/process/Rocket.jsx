@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { RocketIcon } from 'lucide-react';
+import RocketIcon from '../../assets/svgs/Rocket';
 
 const Rocket = () => {
   return (
@@ -8,28 +8,76 @@ const Rocket = () => {
       style={{
         boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
       }}
-      className="rounded-3xl shadow-xl p-6 flex flex-col items-center justify-center relative overflow-hidden"
+      className="rounded-3xl shadow-xl px-6 py-41 flex flex-col items-center justify-center relative overflow-hidden"
     >
-      <div className="absolute inset-0 flex flex-col justify-between">
-        {[...Array(4)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="w-1 h-24 bg-gradient-to-b from-blue-500 to-transparent rounded"
-            initial={{ x: 50, y: 50 }}
-            animate={{ x: [50, 150], y: [50, 150] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'linear', delay: i * 0.3 }}
-            style={{ position: 'absolute', left: `${i * 20 + 20}px`, top: 0 }}
-          />
-        ))}
+      <div className="absolute transform rotate-40 h-[700px] grid grid-cols-2 gap-x-40 w-[80%]">
+        <div className="flex justify-around">
+          <div className="h-full">
+            <marquee
+              className="h-[700px] w-1.5"
+              behavior="smooth"
+              scrollamount="70"
+              direction="down"
+            >
+              <div className="flex flex-col gap-y-30">
+                {Array.from({ length: 7 }).map((_, i) => (
+                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                ))}
+              </div>
+            </marquee>
+          </div>
+          <div className="h-full">
+            <marquee
+              className="h-[700px] w-1.5"
+              behavior="smooth"
+              scrollamount="70"
+              direction="down"
+            >
+              <div className="flex flex-col gap-y-30">
+                {Array.from({ length: 10 }).map((_, i) => (
+                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                ))}
+              </div>
+            </marquee>
+          </div>
+        </div>
+        <div className="flex justify-around">
+          <div className="h-full">
+            <marquee
+              className="h-[700px] w-1.5"
+              behavior="smooth"
+              scrollamount="70"
+              direction="down"
+            >
+              <div className="flex flex-col gap-y-30">
+                {Array.from({ length: 10 }).map((_, i) => (
+                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                ))}
+              </div>
+            </marquee>
+          </div>
+          <div className="h-full">
+            <marquee
+              className="h-[700px] w-1.5"
+              behavior="smooth"
+              scrollamount="70"
+              direction="down"
+            >
+              <div className="flex flex-col gap-y-30">
+                {Array.from({ length: 7 }).map((_, i) => (
+                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                ))}
+              </div>
+            </marquee>
+          </div>
+        </div>
       </div>
-
-      {/* Rocket Icon */}
       <motion.div
-        animate={{ y: [0, 10, 0] }}
+        animate={{ x: [0, 10, 0] }}
         transition={{ duration: 0.5, repeat: Infinity }}
-        className="z-10"
+        className="z-10 transform rotate-5"
       >
-        <RocketIcon size={64} className="text-blue-500" />
+        <RocketIcon />
       </motion.div>
     </div>
   );
