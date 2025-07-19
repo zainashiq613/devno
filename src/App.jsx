@@ -13,6 +13,7 @@ function App() {
       <Process />
       <Title />
       <Solutions />
+      <Title />
     </div>
   );
 }
