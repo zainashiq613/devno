@@ -8,7 +8,7 @@ const Rocket = () => {
       style={{
         boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
       }}
-      className="rounded-3xl shadow-xl px-6 py-41 flex flex-col items-center justify-center relative overflow-hidden"
+      className="rounded-3xl bg-white shadow-xl px-6 py-41 flex flex-col items-center justify-center relative overflow-hidden"
     >
       <div className="absolute transform rotate-40 h-[700px] grid grid-cols-2 gap-x-40 w-[80%]">
         <div className="flex justify-around">
@@ -21,7 +21,10 @@ const Rocket = () => {
             >
               <div className="flex flex-col gap-y-30">
                 {Array.from({ length: 7 }).map((_, i) => (
-                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                  <div
+                    key={i}
+                    className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"
+                  ></div>
                 ))}
               </div>
             </marquee>
@@ -35,7 +38,10 @@ const Rocket = () => {
             >
               <div className="flex flex-col gap-y-30">
                 {Array.from({ length: 10 }).map((_, i) => (
-                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                  <div
+                    key={i}
+                    className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"
+                  ></div>
                 ))}
               </div>
             </marquee>
@@ -51,7 +57,10 @@ const Rocket = () => {
             >
               <div className="flex flex-col gap-y-30">
                 {Array.from({ length: 10 }).map((_, i) => (
-                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                  <div
+                    key={i}
+                    className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"
+                  ></div>
                 ))}
               </div>
             </marquee>
@@ -65,7 +74,10 @@ const Rocket = () => {
             >
               <div className="flex flex-col gap-y-30">
                 {Array.from({ length: 7 }).map((_, i) => (
-                  <div className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"></div>
+                  <div
+                    key={i}
+                    className="bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)] h-[116px]"
+                  ></div>
                 ))}
               </div>
             </marquee>

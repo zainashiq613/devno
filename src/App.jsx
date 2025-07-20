@@ -14,15 +14,46 @@ function App() {
       <div className="max-w-[1512px]">
         <Navbar />
         <Hero />
-        <Title />
+        <Title
+          id={'process'}
+          section={'Process'}
+          title={'Our'}
+          spanText={'Proven Process'}
+          desc={'From concept to execution, see how we bring AI to life in your business'}
+        />
         <Process />
-        <Title />
+        <Title
+          id={'solutions'}
+          section={'Solutions'}
+          title={'Why choose'}
+          spanText={'Devno’s'}
+          desc={'Innovative solutions tailored to meet your unique business needs'}
+        />
         <Solutions />
-        <Title />
+        <Title
+          id={'services'}
+          section={'Services'}
+          title={'What'}
+          spanText={'We Do'}
+          desc={'From concept to execution, see how we bring ideas to life in your business'}
+        />
         <Services />
-        <Title />
+        <Title
+          id={'technologies'}
+          section={'Technologies'}
+          title={'Technologies'}
+          spanText={'We Use'}
+        />
         <Technologies />
-        <Title />
+        <Title
+          id={'about'}
+          section={'About'}
+          title={'Who'}
+          spanText={'We Are'}
+          desc={
+            "At Devno, we believe in the power of technology to transform businesses and enhance everyday life. We're committed to staying at the forefront of technological advancements, continually refining our skills to provide the best possible solutions.Join us on a journey of innovation and success."
+          }
+        />
         <About />
         <Footer />
       </div>

@@ -4,7 +4,7 @@ import Button from '../small/Button';
 function Hero() {
   return (
     <div
-      id="hero"
+      id="home"
       className="hero h-[100vh] flex items-center lg:items-end lg:pb-15 justify-center"
     >
       <div className="flex flex-col gap-8 lg:gap-12 items-center">
