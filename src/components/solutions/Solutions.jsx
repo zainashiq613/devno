@@ -11,7 +11,7 @@ function Solutions() {
   ];
 
   return (
-    <section className="px-6 lg:px-35">
+    <section className="">
       <div className="grid grid-cols-2 items-center">
         <div
           style={{

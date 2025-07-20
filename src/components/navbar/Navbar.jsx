@@ -17,10 +17,10 @@ function Navbar() {
           <Link className="text-sm px-7 py-3">Technologies</Link>
           <Link className="text-sm px-7 py-3">About</Link>
         </div>
-        <div className="hidden">
+        <div className="hidden xl:block">
           <Button />
         </div>
-        <div className="">
+        <div className="xl:hidden">
           <FaBarsStaggered size={30} />
         </div>
       </div>

@@ -3,7 +3,10 @@ import Button from '../small/Button';
 
 function Hero() {
   return (
-    <div className="h-[100vh] px-6 lg:px-40 flex items-center lg:items-end lg:pb-15 justify-center">
+    <div
+      id="hero"
+      className="hero h-[100vh] flex items-center lg:items-end lg:pb-15 justify-center"
+    >
       <div className="flex flex-col gap-8 lg:gap-12 items-center">
         <div className="flex flex-col gap-4 lg:gap-6">
           <h1 className="text-3xl lg:text-6xl text-center text-[#2E3192] font-semibold">
