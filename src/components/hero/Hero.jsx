@@ -20,7 +20,7 @@ function Hero() {
           </p>
         </div>
         <div>
-          <Button />
+          <Button text={'Book A Call'} />
         </div>
         <div className="flex flex-wrap items-center lg:justify-normal justify-center gap-5">
           <div

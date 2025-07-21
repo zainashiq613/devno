@@ -103,27 +103,27 @@ function FlipCard() {
         <div className="z-2 absolute px-6 py-9 w-full h-full">
           <FaLocationDot
             className={`absolute top-[72px] left-[60px] animate-popUp`}
-            fill="#6B79FF"
+            fill="#93278F"
             size={55}
           />
           <FaLocationDot
             className={`absolute top-[72px] right-[60px] animate-popUp`}
-            fill="#6B79FF"
+            fill="#93278F"
             size={55}
           />
           <FaLocationDot
             className={`absolute bottom-[72px] right-[60px] animate-popUp`}
-            fill="#6B79FF"
+            fill="#93278F"
             size={55}
           />
           <FaLocationDot
             className={`absolute left-[60px] bottom-[75px] animate-popUp`}
-            fill="#6B79FF"
+            fill="#93278F"
             size={55}
           />
           <FaLocationDot
             className={`absolute left-[45%] top-[41%] animate-popUp`}
-            fill="#6B79FF"
+            fill="#93278F"
             size={55}
           />
         </div>

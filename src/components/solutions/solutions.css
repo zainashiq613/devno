@@ -1,0 +1,14 @@
+@keyframes scroll-up {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  80% {
+    top: 20%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0;
+  }
+}

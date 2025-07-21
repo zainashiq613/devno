@@ -6,31 +6,31 @@ function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-13">
           <a
             href="#"
-            className="text-[22px] text-text-dark hover:text-primary transition-all duration-200"
+            className="lg:text-[22px] text-text-dark hover:text-primary transition-all duration-200 text-lg"
           >
             Process
           </a>
           <a
             href="#"
-            className="text-[22px] text-text-dark hover:text-primary transition-all duration-200"
+            className="lg:text-[22px] text-text-dark hover:text-primary transition-all duration-200 text-lg"
           >
             Services
           </a>
           <a
             href="#"
-            className="text-[22px] text-text-dark hover:text-primary transition-all duration-200"
+            className="lg:text-[22px] text-text-dark hover:text-primary transition-all duration-200 text-lg"
           >
             Benefits
           </a>
           <a
             href="#"
-            className="text-[22px] text-text-dark hover:text-primary transition-all duration-200"
+            className="lg:text-[22px] text-text-dark hover:text-primary transition-all duration-200 text-lg"
           >
             Plans
           </a>
           <a
             href="#"
-            className="text-[22px] text-text-dark hover:text-primary transition-all duration-200"
+            className="lg:text-[22px] text-text-dark hover:text-primary transition-all duration-200 text-lg"
           >
             Testimonials
           </a>

@@ -45,7 +45,7 @@ function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden xl:block">
-          <Button />
+          <Button text={'Book A Call'} />
         </div>
 
         {/* Mobile Menu Icon */}
@@ -56,19 +56,19 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden mt-3 bg-[#ECEDF1] rounded-xl shadow p-4 space-y-3 transition-all duration-300 animate-fadeIn">
-          {navLinks.map((link, idx) => (
-            <Link
+        <div className="xl:hidden mt-3 bg-[#ECEDF1] rounded-xl shadow p-4 space-y-3 transition-all duration-300 animate-fadeIn">
+          {navLinks.map((item, idx) => (
+            <a
               key={idx}
-              to={`/${link.toLowerCase()}`}
+              href={`${item?.link || '#home'}`}
               className="block text-gray-800 hover:text-primary"
               onClick={() => setMenuOpen(false)}
             >
-              {link}
-            </Link>
+              {item.title}
+            </a>
           ))}
           <div className="mt-3">
-            <Button />
+            <Button text={'Book A Call'} />
           </div>
         </div>
       )}

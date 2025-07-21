@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '../../components/small/Button';
+import './solutions.css';
 
 function Solutions() {
   const collabApps = [
@@ -12,7 +14,7 @@ function Solutions() {
 
   return (
     <section className="">
-      <div className="grid grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-2 gap-8">
         <div
           style={{
             boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
@@ -24,36 +26,53 @@ function Solutions() {
               style={{
                 boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
               }}
-              className="w-20 h-20 rounded-xl flex items-center justify-center z-10"
+              className="px-5 py-5 bg-[#ECEDF1] rounded-xl flex items-center justify-center z-10 transition-all transform duration-300 hover:scale-120 cursor-pointer"
             >
-              <img
-                src={'/5P0eN6qtSxQg8Lrk6rw2GR9e7eI.jpg.png'}
-                alt="brainwave"
-                className="w-16 h-16"
-              />
+              <img src={'/public/Frame 1171274976.png'} alt="brainwave" />
             </div>
             <ul className="absolute inset-0">
               {collabApps.map((item, index) => {
                 const angle = index * (360 / collabApps.length);
                 return (
-                  <li
-                    key={item.id}
-                    className="absolute"
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transform: `rotate(${angle}deg) translate(150px) rotate(-${angle}deg) translate(-50%, -50%)`,
-                    }}
-                  >
+                  <>
                     <div
-                      style={{
-                        boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-                      }}
-                      className="flex w-12 h-12 rounded-xl items-center justify-center"
+                      style={{ transform: `rotate(${angle + 30}deg)` }}
+                      className="absolute flex gap-1 top-0 h-full w-[9px] left-1/2"
                     >
-                      <img className="w-8 h-8" src={item.icon} alt={item.name} />
+                      {[...Array(2)].map((_, pulseIndex) => (
+                        <div className="h-full w-full bg-[#D9D9D9]">
+                          <div
+                            key={pulseIndex}
+                            className="absolute top-0 w-[3px] h-[31px] bg-[linear-gradient(180deg,_#6B79FF_0%,_rgba(255,255,255,0)_100%)]"
+                            style={{
+                              top: '0%',
+                              animation: `scroll-up 3s linear infinite`,
+                              animationDelay: `0s`,
+                            }}
+                          ></div>
+                        </div>
+                      ))}
                     </div>
-                  </li>
+
+                    <li
+                      key={item.id}
+                      className="bg-[#ECEDF1] z-2 absolute"
+                      style={{
+                        top: '50%',
+                        left: '50%',
+                        transform: `rotate(${angle}deg) translate(150px) rotate(-${angle}deg) translate(-50%, -50%)`,
+                      }}
+                    >
+                      <div
+                        style={{
+                          boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
+                        }}
+                        className="flex px-5 py-5 rounded-xl items-center justify-center transition-all transform duration-300 hover:scale-120 cursor-pointer"
+                      >
+                        <img src={item.icon} alt={item.name} />
+                      </div>
+                    </li>
+                  </>
                 );
               })}
             </ul>
@@ -67,114 +86,18 @@ function Solutions() {
             </p>
           </div>
         </div>
-        <div
-          style={{
-            boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-          }}
-          className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-15 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
-        >
-          <div className="relative w-[316px] aspect-square rounded-xl flex items-center justify-center">
-            <div
-              style={{
-                boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-              }}
-              className="w-20 h-20 rounded-xl flex items-center justify-center z-10"
-            >
-              <img
-                src={'/5P0eN6qtSxQg8Lrk6rw2GR9e7eI.jpg.png'}
-                alt="brainwave"
-                className="w-16 h-16"
-              />
-            </div>
-            <ul className="absolute inset-0">
-              {collabApps.map((item, index) => {
-                const angle = index * (360 / collabApps.length);
-                return (
-                  <li
-                    key={item.id}
-                    className="absolute"
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transform: `rotate(${angle}deg) translate(150px) rotate(-${angle}deg) translate(-50%, -50%)`,
-                    }}
-                  >
-                    <div
-                      style={{
-                        boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-                      }}
-                      className="flex w-12 h-12 rounded-xl items-center justify-center"
-                    >
-                      <img className="w-8 h-8" src={item.icon} alt={item.name} />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <p className="text-xl font-semibold">Process automation</p>
-            <p className="text-base">
-              We analyze your processes and implement tailored workflows to automate tasks and
-              optimize operations efficiently.
-            </p>
-          </div>
-        </div>
-        <div
-          style={{
-            boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-          }}
-          className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-15 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
-        >
-          <div className="relative w-[316px] aspect-square rounded-xl flex items-center justify-center">
-            <div
-              style={{
-                boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-              }}
-              className="w-20 h-20 rounded-xl flex items-center justify-center z-10"
-            >
-              <img
-                src={'/5P0eN6qtSxQg8Lrk6rw2GR9e7eI.jpg.png'}
-                alt="brainwave"
-                className="w-16 h-16"
-              />
-            </div>
-            <ul className="absolute inset-0">
-              {collabApps.map((item, index) => {
-                const angle = index * (360 / collabApps.length);
-                return (
-                  <li
-                    key={item.id}
-                    className="absolute"
-                    style={{
-                      top: '50%',
-                      left: '50%',
-                      transform: `rotate(${angle}deg) translate(150px) rotate(-${angle}deg) translate(-50%, -50%)`,
-                    }}
-                  >
-                    <div
-                      style={{
-                        boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-                      }}
-                      className="flex w-12 h-12 rounded-xl items-center justify-center"
-                    >
-                      <img className="w-8 h-8" src={item.icon} alt={item.name} />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <p className="text-xl font-semibold">Process automation</p>
-            <p className="text-base">
-              We analyze your processes and implement tailored workflows to automate tasks and
-              optimize operations efficiently.
-            </p>
-          </div>
-        </div>
+        <SubmitAnimation
+          title={'Quick Response'}
+          desc={
+            'Delivering swift solutions with our quick response team for all your software needs!'
+          }
+        />
+        <SubmitAnimation
+          title={'Personalized solutions'}
+          desc={
+            'Get personalized software solutions tailored to your unique business needs, ensuring precision and efficiency.'
+          }
+        />
         <div
           style={{
             boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
@@ -184,10 +107,10 @@ function Solutions() {
           <HoverIconsWithShapes />
 
           <div className="flex flex-col gap-2">
-            <p className="text-xl font-semibold">Process automation</p>
+            <p className="text-xl font-semibold">Innovative solutions</p>
             <p className="text-base">
-              We analyze your processes and implement tailored workflows to automate tasks and
-              optimize operations efficiently.
+              Unlock the future with innovative software solutions designed to drive growth and
+              efficiency for your business.
             </p>
           </div>
         </div>
@@ -204,6 +127,8 @@ import Skeleton from 'react-loading-skeleton';
 import { CiLinkedin, CiTwitter } from 'react-icons/ci';
 import { PiYoutubeLogo } from 'react-icons/pi';
 import { ImNewspaper } from 'react-icons/im';
+import { div } from 'framer-motion/client';
+import SubmitAnimation from './SubmitAnimation';
 
 export function HoverIconsWithShapes() {
   const [hovered, setHovered] = useState(false);

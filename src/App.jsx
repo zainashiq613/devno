@@ -10,7 +10,7 @@ import Technologies from './components/technologies/Technologies';
 
 function App() {
   return (
-    <div className="!background-color px-6 flex items-center justify-center lg:px-35 ">
+    <div className="!background-color px-6 flex items-center justify-center lg:px-10 xl:px-35 ">
       <div className="max-w-[1512px]">
         <Navbar />
         <Hero />

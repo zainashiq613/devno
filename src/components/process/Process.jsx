@@ -4,7 +4,7 @@ import SkeletonScroll from './SkeletonScroll';
 
 function Process() {
   return (
-    <div className="pb-13">
+    <div className="pb-13 lg:px-20">
       <div className="grid grid-cols-2 gap-x-15 gap-y-25 items-center">
         <div className="col-span-2 lg:col-span-1">
           <FlipCard />
