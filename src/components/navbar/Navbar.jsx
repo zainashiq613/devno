@@ -11,7 +11,7 @@ function Navbar() {
   console.log(pathname);
 
   const navLinks = [
-    { id: '1', link: '#home', title: 'Home' },
+    { id: '1', link: '', title: 'Home' },
     { id: '2', link: '#process', title: 'Process' },
     { id: '3', link: '#solutions', title: 'Solutions' },
     { id: '4', link: '#services', title: 'Services' },
@@ -28,10 +28,10 @@ function Navbar() {
         <img src="/Frame 1000004543.png" alt="Logo" className="h-8 sm:h-10" />
 
         <div className="hidden lg:flex items-center gap-2.5">
-          {navLinks.map((item, idx) => (
+          {navLinks.map((item) => (
             <a
-              key={idx}
-              href={`${item?.link}`}
+              key={item.id}
+              href={`${item?.link || '#home'}`}
               className={`text-sm px-4 py-2 rounded-3xl ${
                 item.link === pathname?.hash
                   ? 'border border-primary text-primary'
