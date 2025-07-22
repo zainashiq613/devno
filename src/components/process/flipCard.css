@@ -8,30 +8,106 @@
   }
 }
 
-@keyframes move5 {
+.animated-box {
+  position: absolute;
+  animation: moveDesktop 8s linear infinite;
+}
+
+/* Desktop Animation */
+@keyframes moveDesktop {
   0% {
-    top: 0;
-    left: 0;
+    top: 32px;
+    right: 62%;
   }
   20% {
-    left: 57%;
-    top: 0;
+    top: 32px;
+    right: 20px;
   }
   40% {
-    top: 51%;
-    left: 57%;
+    top: 59%;
+    right: 20px;
   }
   60% {
-    top: 50%;
-    left: 0;
+    top: 59%;
+    right: 62%;
   }
   80% {
-    top: 25%;
-    left: 30%;
+    top: 32%;
+    right: 33%;
   }
   100% {
-    top: 0;
-    left: 0;
+    top: 32px;
+    right: 62%;
+  }
+}
+
+/* Tablet Animation */
+@keyframes moveTablet {
+  0% {
+    top: 32px;
+    right: 77%;
+  }
+  20% {
+    top: 32px;
+    right: 20px;
+  }
+  40% {
+    top: 59%;
+    right: 20px;
+  }
+  60% {
+    top: 59%;
+    right: 77%;
+  }
+  80% {
+    top: 32%;
+    right: 41%;
+  }
+  100% {
+    top: 32px;
+    right: 77%;
+  }
+}
+
+/* Mobile Animation */
+@keyframes moveMobile {
+  0% {
+    top: 32px;
+    right: 60%;
+  }
+  20% {
+    top: 32px;
+    right: 20px;
+  }
+  40% {
+    top: 59%;
+    right: 20px;
+  }
+  60% {
+    top: 59%;
+    right: 60%;
+  }
+  80% {
+    top: 32%;
+    right: 30%;
+  }
+  100% {
+    top: 32px;
+    right: 60%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .animated-box {
+    animation: moveTablet 7s linear infinite;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .animated-box {
+    animation: moveMobile 7s linear infinite;
   }
 }
 

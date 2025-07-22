@@ -67,7 +67,7 @@ function FlipCard() {
 
   return (
     <div
-      className="group max-w-[420px] cursor-pointer w-full relative transition-transform duration-500 transform"
+      className="group cursor-pointer w-full relative transition-transform duration-500 transform"
       onMouseEnter={() => moveImages(true)}
       onMouseLeave={() => moveImages(false)}
     >
@@ -127,14 +127,10 @@ function FlipCard() {
             size={55}
           />
         </div>
-        <div
-          style={{
-            animation: 'move5 8s infinite',
-            animationDelay: '0s, 2s',
-          }}
-          className="absolute z-2 px-6 py-9"
-        >
-          <Aim />
+        <div className="w-full h-full absolute z-2 px-6 py-9">
+          <div className="animated-box absolute">
+            <Aim />
+          </div>
         </div>
         <div className="flex flex-col w-full col-span-11 gap-3">
           {Array.from({ length: 10 }).map((_, i) => (

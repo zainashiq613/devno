@@ -20,7 +20,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="w-full fixed top-0 left-0 z-20 bg-transparent px-5 sm:px-10 lg:px-20 xl:px-[140px] py-4 transition duration-500 flex justify-center">
+    <div className="w-full fixed top-0 left-0 z-20 bg-transparent px-5 sm:px-10 lg:px-20 xl:px-[140px] py-4 transition duration-500 flex flex-col items-center justify-center">
       <div
         className="w-full max-w-[1512px] shadow bg-[#ECEDF1] rounded-[40px] flex items-center justify-between py-3 px-4 
         [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF]"
@@ -56,7 +56,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="xl:hidden mt-3 bg-[#ECEDF1] rounded-xl shadow p-4 space-y-3 transition-all duration-300 animate-fadeIn">
+        <div className="xl:hidden w-full mt-3 bg-[#ECEDF1] rounded-xl shadow p-4 space-y-3 transition-all duration-300 animate-fadeIn">
           {navLinks.map((item, idx) => (
             <a
               key={idx}

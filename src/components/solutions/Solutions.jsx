@@ -118,7 +118,7 @@ function Solutions() {
             className="rounded-3xl group cursor-pointer w-full relative"
           >
             <div className="mx-auto p-4 flex flex-col justify-between">
-              <div ref={ref} className="flex flex-col pt-15 h-[240px] overflow-hidden gap-10">
+              <div ref={ref} className="flex flex-col pt-15 h-[240px] overflow-hidden gap-12">
                 <div className="bg-indigo-500 text-white p-3 rounded-2xl self-start max-w-[80%] shadow">
                   Hi! How can I help you?
                 </div>
