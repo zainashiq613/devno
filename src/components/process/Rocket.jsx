@@ -8,7 +8,7 @@ const Rocket = () => {
       style={{
         boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
       }}
-      className="w-full max-w-[500px] rounded-3xl shadow-xl px-6 py-41 flex flex-col items-center justify-center relative overflow-hidden"
+      className="w-full rounded-3xl shadow-xl px-6 py-41 flex flex-col items-center justify-center relative overflow-hidden"
     >
       <div className="absolute transform rotate-40 h-[700px] grid grid-cols-2 gap-x-40 w-[80%]">
         <div className="flex justify-around">

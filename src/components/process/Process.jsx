@@ -31,10 +31,10 @@ function Process() {
             scalable, and tailored to your needs.
           </p>
         </div>
-        <div className="col-span-2 lg:col-span-1 flex flex-col items-center">
+        <div className="col-span-2 lg:col-span-1">
           <SkeletonScroll />
         </div>
-        <div className="col-span-2 lg:col-span-1 flex flex-col items-center">
+        <div className="col-span-2 lg:col-span-1">
           <Rocket />
         </div>
         <div className="col-span-2 lg:col-span-1 flex flex-col box-border gap-2">
