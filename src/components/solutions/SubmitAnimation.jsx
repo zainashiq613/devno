@@ -113,7 +113,7 @@ const SubmitAnimation = ({ title, desc }) => {
       <div
         ref={innerContainerRef}
         style={{ boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF' }}
-        className="relative rounded-3xl p-5 w-[80%] flex flex-col gap-7 items-center justify-start overflow-hidden"
+        className="relative rounded-3xl p-5 w-full sm:w-[80%] flex flex-col gap-7 items-center justify-start overflow-hidden"
       >
         <div ref={contentRef} className="w-full flex flex-col gap-2.5">
           <div className="grid gap-5 grid-cols-10">

@@ -6,7 +6,7 @@ function Process() {
   return (
     <div className="pb-13 lg:px-20">
       <div className="grid grid-cols-2 gap-x-15 gap-y-25 items-center">
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 lg:col-span-1 flex flex-col items-center">
           <FlipCard />
         </div>
         <div className="col-span-2 lg:col-span-1 flex flex-col box-border gap-2">
@@ -31,10 +31,10 @@ function Process() {
             scalable, and tailored to your needs.
           </p>
         </div>
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 lg:col-span-1 flex flex-col items-center">
           <SkeletonScroll />
         </div>
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 lg:col-span-1 flex flex-col items-center">
           <Rocket />
         </div>
         <div className="col-span-2 lg:col-span-1 flex flex-col box-border gap-2">

@@ -26,7 +26,7 @@ function SkeletonScroll() {
     <div
       onMouseEnter={handleScroll}
       onMouseLeave={backScroll}
-      className="rounded-3xl group cursor-pointer w-full relative"
+      className="max-w-[500px] rounded-3xl group cursor-pointer w-full relative"
     >
       <div
         style={{

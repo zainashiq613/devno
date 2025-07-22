@@ -67,7 +67,7 @@ function FlipCard() {
 
   return (
     <div
-      className="group cursor-pointer w-full relative transition-transform duration-500 transform"
+      className="group max-w-[420px] cursor-pointer w-full relative transition-transform duration-500 transform"
       onMouseEnter={() => moveImages(true)}
       onMouseLeave={() => moveImages(false)}
     >

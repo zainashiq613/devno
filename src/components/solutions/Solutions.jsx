@@ -12,6 +12,26 @@ function Solutions() {
     { id: '6', icon: '/web-coding_4834819 1.png', name: 'Coding' },
   ];
 
+  const ref = useRef();
+
+  const handleScroll = () => {
+    if (ref.current) {
+      ref.current.scrollBy({
+        top: 350,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const backScroll = () => {
+    if (ref.current) {
+      ref.current.scrollBy({
+        top: -350,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <section className="">
       <div className="grid grid-cols-2 gap-8">
@@ -79,19 +99,58 @@ function Solutions() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <p className="text-xl font-semibold">Process automation</p>
-            <p className="text-base">
+            <p className="text-lg md:text-xl font-semibold">Process automation</p>
+            <p className="lg:text-base text-sm">
               We analyze your processes and implement tailored workflows to automate tasks and
               optimize operations efficiently.
             </p>
           </div>
         </div>
-        <SubmitAnimation
-          title={'Quick Response'}
-          desc={
-            'Delivering swift solutions with our quick response team for all your software needs!'
-          }
-        />
+        <div
+          style={{
+            boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
+          }}
+          className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-12 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
+        >
+          <div
+            onMouseEnter={handleScroll}
+            onMouseLeave={backScroll}
+            className="rounded-3xl group cursor-pointer w-full relative"
+          >
+            <div className="mx-auto p-4 flex flex-col justify-between">
+              <div ref={ref} className="flex flex-col pt-15 h-[240px] overflow-hidden gap-10">
+                <div className="bg-indigo-500 text-white p-3 rounded-2xl self-start max-w-[80%] shadow">
+                  Hi! How can I help you?
+                </div>
+                <div className="bg-white text-gray-800 p-3 rounded-2xl self-end max-w-[80%] shadow">
+                  Hi, can you tell me about Lucy- Medical Software solution?
+                </div>
+                <div className="bg-indigo-500 text-white p-3 rounded-2xl self-start max-w-[80%] shadow">
+                  Sure, We’ve built an advanced healthcare software solution,
+                  <br />
+                  meticulously crafted for today’s medical practitioners.
+                </div>
+              </div>
+
+              <div className="flex items-center bg-[#ECEDF1] px-2 py-2 rounded-full mt-6 shadow [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF]">
+                <input
+                  type="text"
+                  className="flex-1 border-none outline-none bg-transparent px-3 text-sm"
+                  disabled
+                />
+                <button className="text-indigo-500 p-5 rounded-full bg-white text-xl cursor-not-allowed">
+                  <FaPaperPlane />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <p className="text-lg md:text-xl font-semibold">Quick Response</p>
+            <p className="lg:text-base text-sm">
+              Delivering swift solutions with our quick response team for all your software needs!
+            </p>
+          </div>
+        </div>
         <SubmitAnimation
           title={'Personalized solutions'}
           desc={
@@ -107,8 +166,8 @@ function Solutions() {
           <HoverIconsWithShapes />
 
           <div className="flex flex-col gap-2">
-            <p className="text-xl font-semibold">Innovative solutions</p>
-            <p className="text-base">
+            <p className="text-lg md:text-xl font-semibold">Innovative solutions</p>
+            <p className="lg:text-base text-sm">
               Unlock the future with innovative software solutions designed to drive growth and
               efficiency for your business.
             </p>
@@ -129,6 +188,7 @@ import { PiYoutubeLogo } from 'react-icons/pi';
 import { ImNewspaper } from 'react-icons/im';
 import { div } from 'framer-motion/client';
 import SubmitAnimation from './SubmitAnimation';
+import { FaPaperPlane } from 'react-icons/fa6';
 
 export function HoverIconsWithShapes() {
   const [hovered, setHovered] = useState(false);
@@ -146,8 +206,29 @@ export function HoverIconsWithShapes() {
       });
 
       // Animate icons up
-      gsap.to(iconsRef.current, {
-        y: -120,
+      gsap.to(iconsRef.current[0], {
+        y: -100,
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+        duration: 0.5,
+      });
+      gsap.to(iconsRef.current[1], {
+        y: -125,
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+        duration: 0.5,
+      });
+      gsap.to(iconsRef.current[2], {
+        y: -125,
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+        duration: 0.5,
+      });
+      gsap.to(iconsRef.current[3], {
+        y: -100,
         opacity: 1,
         stagger: 0.1,
         ease: 'back.out(1.7)',
@@ -294,7 +375,7 @@ export function HoverIconsWithShapes() {
               boxShadow: '8px 8px 20px 0px #A6ABBD40, -2px -2px 15px 0px #FAFBFF',
             }}
             ref={(el) => (iconsRef.current[index] = el)}
-            className="rounded-full px-6 py-6 text-black opacity-0"
+            className="rounded-full p-3 sm:px-6 sm:py-6 text-black opacity-0"
           >
             {Icon}
           </div>

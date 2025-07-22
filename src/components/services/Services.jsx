@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../small/Button';
 import UiUx from '../../assets/svgs/UiUx';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -9,8 +9,6 @@ import WordPress from '../../assets/svgs/WordPress';
 import SEO from '../../assets/svgs/SEO';
 import Content from '../../assets/svgs/Content';
 import Graphic from '../../assets/svgs/Graphic';
-
-const ITEMS_PER_PAGE = 3;
 
 const data = [
   {
@@ -100,37 +98,66 @@ const data = [
   },
 ];
 
+// Determine items per page based on window width
+function getItemsPerPage(width) {
+  if (width >= 1024) return 3; // large screens
+  if (width >= 768) return 2; // medium screens
+  return 1; // small screens
+}
+
 function Services() {
   const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
-  const currentTotal = data.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
+  const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage(window.innerWidth));
 
-  const start = page - 1 + 1;
-  const end = Math.min(start + totalPages - 1, totalPages);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const currentItems = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+  const handleResize = () => {
+    const newItemsPerPage = getItemsPerPage(window.innerWidth);
+    setItemsPerPage(newItemsPerPage);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    // Initial setup
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (page > totalPages) setPage(1);
+  }, [itemsPerPage, totalPages]);
+
+  const goToPage = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setPage(newPage);
+    }
+  };
 
   return (
-    <div className="">
-      <div className="flex flex-col gap-10 items-center">
+    <div className="w-full py-10">
+      <div className="flex flex-col gap-8 items-center">
         <Button text={'Book a 15-min call'} />
-        <div className="grid lg:grid-cols-3 justify-between gap-7 w-full">
-          {currentTotal.map((item) => (
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {currentItems.map((item) => (
             <div
               key={item.id}
               style={{
                 boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
               }}
-              className="p-7 rounded-2xl flex flex-col gap-7"
+              className="p-6 rounded-2xl flex flex-col gap-5 bg-[#ECEDF1] shadow-lg"
             >
-              <div className="flex flex-col gap-7 items-center">
+              <div className="flex flex-col gap-3 items-center">
                 {item.icon}
-                <h1 className="font-semibold text-xl text-text-dark">{item.title}</h1>
+                <h1 className="font-semibold text-xl text-text-dark text-center">{item.title}</h1>
               </div>
-              <div className="flex flex-col gap-3">
-                <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-2">
+                <div>
                   <p className="text-lg font-medium text-[#2B2B2B]">{item.subTitle1}</p>
                   <span className="text-sm text-text-secondary">{item.desc1}</span>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div>
                   <p className="text-lg font-medium text-[#2B2B2B]">{item.subTitle2}</p>
                   <span className="text-sm text-text-secondary">{item.desc2}</span>
                 </div>
@@ -138,18 +165,24 @@ function Services() {
             </div>
           ))}
         </div>
-        <div className="flex gap-4 items-center">
+
+        <div className="flex gap-4 items-center mt-4">
           <button
-            onClick={() => setPage(page - 1)}
+            onClick={() => goToPage(page - 1)}
             disabled={page === 1}
-            className="px-4 py-4 text-primary rounded-full cursor-pointer flex items-center justify-center [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] bg-[#ECEDF1]"
+            className={` [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center
+              ${page === 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
+              text-primary shadow-md bg-[#ECEDF1]`}
           >
             <FaArrowLeft />
           </button>
+
           <button
-            onClick={() => setPage(page + 1)}
+            onClick={() => goToPage(page + 1)}
             disabled={page === totalPages}
-            className="px-4 py-4 text-primary rounded-full cursor-pointer flex items-center justify-center [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] bg-[#ECEDF1]"
+            className={` [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center
+              ${page === totalPages ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
+              text-primary shadow-md bg-[#ECEDF1]`}
           >
             <FaArrowRight />
           </button>
