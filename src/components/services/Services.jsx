@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from '../small/Button';
 import UiUx from '../../assets/svgs/UiUx';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -98,39 +98,12 @@ const data = [
   },
 ];
 
-// Determine items per page based on window width
-function getItemsPerPage(width) {
-  if (width >= 1024) return 3; // large screens
-  if (width >= 768) return 2; // medium screens
-  return 1; // small screens
-}
-
 function Services() {
-  const [page, setPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage(window.innerWidth));
+  const scrollRef = useRef(null);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const currentItems = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
-
-  const handleResize = () => {
-    const newItemsPerPage = getItemsPerPage(window.innerWidth);
-    setItemsPerPage(newItemsPerPage);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    // Initial setup
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (page > totalPages) setPage(1);
-  }, [itemsPerPage, totalPages]);
-
-  const goToPage = (newPage) => {
-    if (newPage >= 1 && newPage <= totalPages) {
-      setPage(newPage);
+  const scroll = (scrollOffset) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: scrollOffset, behavior: 'smooth' });
     }
   };
 
@@ -139,50 +112,49 @@ function Services() {
       <div className="flex flex-col gap-10 items-center">
         <Button text={'Book a 15-min call'} />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {currentItems.map((item) => (
-            <div
-              key={item.id}
-              style={{
-                boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-              }}
-              className="p-6 rounded-2xl flex flex-col gap-5 bg-[#ECEDF1] shadow-lg"
-            >
-              <div className="flex flex-col gap-3 items-center">
-                {item.icon}
-                <h1 className="font-semibold text-xl text-text-dark text-center">{item.title}</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div>
-                  <p className="text-lg font-medium text-[#2B2B2B]">{item.subTitle1}</p>
-                  <span className="text-sm text-text-secondary">{item.desc1}</span>
+        <div className="grid gap-8 w-full overflow-hidden">
+          <div ref={scrollRef} className="flex py-2 rounded-2xl gap-8 overflow-hidden">
+            {data.map((item) => (
+              <div
+                key={item.id}
+                className="p-6 rounded-2xl flex flex-col gap-5 bg-[#ECEDF1] shadow-lg"
+              >
+                <div className="flex flex-col gap-3 items-center">
+                  {item.icon}
+                  <h1 className="w-[330px] md:w-[275px] lg:w-[330px] font-semibold text-lg lg:text-xl text-text-dark text-center">
+                    {item.title}
+                  </h1>
                 </div>
-                <div>
-                  <p className="text-lg font-medium text-[#2B2B2B]">{item.subTitle2}</p>
-                  <span className="text-sm text-text-secondary">{item.desc2}</span>
+                <div className="flex flex-col gap-2">
+                  <div>
+                    <p className="text-sm lg:text-lg font-medium text-[#2B2B2B]">
+                      {item.subTitle1}
+                    </p>
+                    <span className="text-xs lg:text-sm text-text-secondary">{item.desc1}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm lg:text-lg font-medium text-[#2B2B2B]">
+                      {item.subTitle2}
+                    </p>
+                    <span className="text-xs lg:text-sm text-text-secondary">{item.desc2}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="flex gap-4 items-center mt-4">
           <button
-            onClick={() => goToPage(page - 1)}
-            disabled={page === 1}
-            className={` [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center
-              ${page === 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
-              text-primary shadow-md bg-[#ECEDF1]`}
+            onClick={() => scroll(-410)}
+            className={`cursor-pointer [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-[#ECEDF1]`}
           >
             <FaArrowLeft />
           </button>
 
           <button
-            onClick={() => goToPage(page + 1)}
-            disabled={page === totalPages}
-            className={` [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center
-              ${page === totalPages ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
-              text-primary shadow-md bg-[#ECEDF1]`}
+            onClick={() => scroll(410)}
+            className={`cursor-pointer [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-[#ECEDF1]`}
           >
             <FaArrowRight />
           </button>
