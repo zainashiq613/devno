@@ -6,7 +6,7 @@ function About() {
   const [showContactForm, setShowContactForm] = useState(false);
 
   return (
-    <div className="py-10" id="contact">
+    <div className="py-13" id="contact">
       <div
         style={{
           boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
