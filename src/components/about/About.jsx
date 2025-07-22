@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../small/Button';
 
-function About() {
-  const [showContactForm, setShowContactForm] = useState(false);
-
+function About({ showContactForm, setShowContactForm }) {
   return (
     <div className="py-13" id="contact">
       <div

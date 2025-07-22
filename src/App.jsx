@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import About from './components/about/About';
 import Footer from './components/footer/Footer';
 import Hero from './components/hero/Hero';
@@ -9,10 +10,12 @@ import Solutions from './components/solutions/Solutions';
 import Technologies from './components/technologies/Technologies';
 
 function App() {
+  const [showContactForm, setShowContactForm] = useState(false);
+
   return (
     <div className="!background-color px-6 sm:px-10 flex items-center justify-center lg:px-10 xl:px-35 ">
       <div className="max-w-[1512px]">
-        <Navbar />
+        <Navbar showContactForm={showContactForm} setShowContactForm={setShowContactForm} />
         <Hero />
         <Title
           id={'process'}
@@ -54,7 +57,7 @@ function App() {
             "At Devno, we believe in the power of technology to transform businesses and enhance everyday life. We're committed to staying at the forefront of technological advancements, continually refining our skills to provide the best possible solutions.Join us on a journey of innovation and success."
           }
         />
-        <About />
+        <About showContactForm={showContactForm} setShowContactForm={setShowContactForm} />
         <Footer />
       </div>
     </div>

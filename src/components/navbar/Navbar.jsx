@@ -6,7 +6,7 @@ import { IoClose } from 'react-icons/io5';
 import { useLocation } from 'react-router';
 import { GoArrowUpRight } from 'react-icons/go';
 
-function Navbar() {
+function Navbar({ setShowContactForm }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useLocation();
   console.log(pathname);
@@ -46,7 +46,14 @@ function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden xl:block">
-          <Button text={'Book A Call'} />
+          <a
+            href="#contact"
+            className="bg-primary cursor-pointer hover:bg-black transition-all duration-500 text-white px-6 py-3 rounded-3xl text-base [box-shadow:5px_5px_10px_0px_#A6ABBD80,_-5px_-5px_10px_0px_#FAFBFF]"
+            onClick={() => setShowContactForm(true)}
+          >
+            Book A Call
+          </a>
+          {/* <Button text={'Book A Call'} /> */}
         </div>
 
         <div className="hidden lg:block xl:hidden !bg-primary rounded-full p-2">
