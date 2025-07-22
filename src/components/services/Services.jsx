@@ -136,7 +136,7 @@ function Services() {
 
   return (
     <div className="w-full py-10">
-      <div className="flex flex-col gap-8 items-center">
+      <div className="flex flex-col gap-10 items-center">
         <Button text={'Book a 15-min call'} />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">

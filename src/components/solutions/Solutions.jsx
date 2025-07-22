@@ -33,7 +33,7 @@ function Solutions() {
   };
 
   return (
-    <section className="">
+    <section className="py-13">
       <div className="grid grid-cols-2 gap-8">
         <div
           style={{

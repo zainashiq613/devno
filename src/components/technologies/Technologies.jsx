@@ -57,7 +57,7 @@ const techIcons = [
 
 const TechIconsGrid = () => {
   return (
-    <div className="">
+    <div className="py-10">
       <div className="flex flex-wrap gap-8 justify-center">
         {techIcons.map(({ id, name, icon }) => (
           <div
