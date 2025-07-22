@@ -48,7 +48,7 @@ function Solutions() {
               }}
               className="px-5 py-5 bg-[#ECEDF1] rounded-xl flex items-center justify-center z-10 transition-all transform duration-300 hover:scale-120 cursor-pointer"
             >
-              <img src={'/public/Frame 1171274976.png'} alt="brainwave" />
+              <img src={'/Frame 1171274976.png'} alt="" />
             </div>
             <ul className="absolute inset-0">
               {collabApps.map((item, index) => {
