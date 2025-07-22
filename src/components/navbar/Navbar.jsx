@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Button from '../small/Button';
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { IoClose } from 'react-icons/io5';
-import { Link, useLocation } from 'react-router';
+import { useLocation } from 'react-router';
+import { GoArrowUpRight } from 'react-icons/go';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,8 +49,12 @@ function Navbar() {
           <Button text={'Book A Call'} />
         </div>
 
+        <div className="hidden lg:block xl:hidden !bg-primary rounded-full p-2">
+          <GoArrowUpRight fill="white" size={30} />
+        </div>
+
         {/* Mobile Menu Icon */}
-        <div className="xl:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <IoClose size={30} /> : <FaBarsStaggered size={30} />}
         </div>
       </div>

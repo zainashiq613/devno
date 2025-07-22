@@ -2,7 +2,7 @@ function Footer() {
   return (
     <div className="py-10">
       <div className="flex flex-col gap-7 items-center">
-        <img src="/public/Frame 1000004543.png" alt="" />
+        <img src="/Frame 1000004543.png" alt="" />
         <div className="flex flex-col md:flex-row items-center gap-13">
           <a
             href="#"
