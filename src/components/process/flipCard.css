@@ -16,11 +16,11 @@
 /* Desktop Animation */
 @keyframes moveDesktop {
   0% {
-    top: 32px;
-    right: 62%;
+    top: 34px;
+    right: 79%;
   }
   20% {
-    top: 32px;
+    top: 34px;
     right: 20px;
   }
   40% {
@@ -29,15 +29,69 @@
   }
   60% {
     top: 59%;
-    right: 62%;
+    right: 79%;
+  }
+  80% {
+    top: 32%;
+    right: 41%;
+  }
+  100% {
+    top: 34px;
+    right: 79%;
+  }
+}
+
+@keyframes moveDesktopSmall {
+  0% {
+    top: 34px;
+    right: 74%;
+  }
+  20% {
+    top: 34px;
+    right: 20px;
+  }
+  40% {
+    top: 59%;
+    right: 20px;
+  }
+  60% {
+    top: 59%;
+    right: 74%;
+  }
+  80% {
+    top: 32%;
+    right: 36%;
+  }
+  100% {
+    top: 34px;
+    right: 74%;
+  }
+}
+
+@keyframes moveForLarge {
+  0% {
+    top: 34px;
+    right: 66%;
+  }
+  20% {
+    top: 34px;
+    right: 20px;
+  }
+  40% {
+    top: 59%;
+    right: 20px;
+  }
+  60% {
+    top: 59%;
+    right: 66%;
   }
   80% {
     top: 32%;
     right: 33%;
   }
   100% {
-    top: 32px;
-    right: 62%;
+    top: 34px;
+    right: 66%;
   }
 }
 
@@ -94,6 +148,18 @@
   100% {
     top: 32px;
     right: 60%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .animated-box {
+    animation: moveDesktopSmall 7s linear infinite;
+  }
+}
+
+@media (max-width: 1024px) {
+  .animated-box {
+    animation: moveForLarge 7s linear infinite;
   }
 }
 
