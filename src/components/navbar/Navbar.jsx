@@ -56,9 +56,13 @@ function Navbar({ setShowContactForm }) {
           {/* <Button text={'Book A Call'} /> */}
         </div>
 
-        <div className="hidden lg:block xl:hidden !bg-primary rounded-full p-2">
+        <a
+          href="#contact"
+          onClick={() => setShowContactForm(true)}
+          className="hidden lg:block xl:hidden !bg-primary rounded-full p-2"
+        >
           <GoArrowUpRight fill="white" size={30} />
-        </div>
+        </a>
 
         {/* Mobile Menu Icon */}
         <div className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>
