@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import Button from '../small/Button';
 import { FaBarsStaggered } from 'react-icons/fa6';
@@ -19,6 +19,27 @@ function Navbar({ setShowContactForm }) {
     { id: '5', link: '#technologies', title: 'Technologies' },
     { id: '6', link: '#about', title: 'About' },
   ];
+
+  const menuRef = useRef();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    }
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <div className="w-full fixed top-0 left-0 z-20 bg-transparent px-5 sm:px-10 lg:px-20 xl:px-[140px] py-4 transition duration-500 flex flex-col items-center justify-center">
@@ -72,7 +93,10 @@ function Navbar({ setShowContactForm }) {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="xl:hidden w-full mt-3 bg-[#ECEDF1] rounded-xl shadow p-4 space-y-3 transition-all duration-300 animate-fadeIn">
+        <div
+          ref={menuRef}
+          className="lg:hidden w-full mt-3 bg-[#ECEDF1] rounded-xl shadow p-4 space-y-3 transition-all duration-300 animate-fadeIn"
+        >
           {navLinks.map((item, idx) => (
             <a
               key={idx}
