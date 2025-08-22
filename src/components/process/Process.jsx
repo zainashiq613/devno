@@ -10,7 +10,7 @@ function Process() {
           <FlipCard />
         </div>
         <div className="col-span-2 lg:col-span-1 flex flex-col box-border gap-2">
-          <p className="text-[#2E3192] font-semibold text-6xl lg:text-[80px] leading-17">01</p>
+          <p className="text-[#176aea] font-semibold text-6xl lg:text-[80px] leading-17">01</p>
           <h3 className="font-semibold text-2xl lg:text-4xl">Discovery & Analysis</h3>
           <p className="text-sm lg:text-lg">
             We take a deep dive into your business needs and objectives, analyzing workflows and
@@ -20,7 +20,7 @@ function Process() {
           </p>
         </div>
         <div className="col-span-2 lg:col-span-1 flex flex-col box-border gap-2">
-          <span className="text-[#2E3192] text-6xl lg:text-[80px] font-semibold leading-17">
+          <span className="text-[#176aea] text-6xl lg:text-[80px] font-semibold leading-17">
             02
           </span>
           <h3 className="font-semibold text-2xl lg:text-4xl">Development</h3>
@@ -38,7 +38,7 @@ function Process() {
           <Rocket />
         </div>
         <div className="col-span-2 lg:col-span-1 flex flex-col box-border gap-2">
-          <span className="text-[#2E3192] text-6xl lg:text-[80px] font-semibold leading-17">
+          <span className="text-[#176aea] text-6xl lg:text-[80px] font-semibold leading-17">
             03
           </span>
           <h3 className="font-semibold text-2xl lg:text-4xl">Deployment</h3>

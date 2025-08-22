@@ -6,7 +6,7 @@ function Hero() {
     <div id="home" className="hero h-[100vh] flex items-center pt-20 justify-center">
       <div className="flex flex-col gap-8 lg:gap-12 items-center">
         <div className="flex flex-col gap-4 lg:gap-6">
-          <h1 className="text-3xl lg:text-6xl text-center text-[#2E3192] font-semibold">
+          <h1 className="text-3xl lg:text-6xl text-center text-[#176aea] font-semibold">
             Where Innovation Meets <br />
             <span className="text-primary">Excellence</span>
           </h1>

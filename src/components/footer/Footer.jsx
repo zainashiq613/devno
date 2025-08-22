@@ -2,7 +2,7 @@ function Footer() {
   return (
     <div className="py-10">
       <div className="flex flex-col gap-7 items-center">
-        <img src="/Frame 1000004543.png" alt="" />
+        <img className="max-w-[160px]" src="/devno-logo.png" alt="" />
         <div className="flex flex-col md:flex-row items-center gap-13">
           <a
             href="#"
@@ -37,7 +37,7 @@ function Footer() {
         </div>
         <p className="text-text-dark text-xl">Create Future with us!</p>
         <div className="w-full flex flex-col md:flex-row gap-7 items-center justify-between">
-          <p className="text-lg text-text-dark">© Copyright 2024 Devno</p>
+          <p className="text-lg text-text-dark">© Copyright 2021 Devno Sol.</p>
           <div className="flex items-center gap-5">
             <a
               style={{
