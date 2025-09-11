@@ -8,13 +8,14 @@ import Services from './components/services/Services';
 import Title from './components/small/Title';
 import Solutions from './components/solutions/Solutions';
 import Technologies from './components/technologies/Technologies';
+import BackgroundGrid from './components/hero/BackgroundGrid';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
 
   return (
     <div className="!background-color px-6 sm:px-10 flex items-center justify-center lg:px-10 xl:px-35 ">
-      <div className="max-w-[1512px]">
+      <div className="relative max-w-[1512px]">
         <Navbar showContactForm={showContactForm} setShowContactForm={setShowContactForm} />
         <Hero />
         <Title
@@ -60,6 +61,7 @@ function App() {
         <About showContactForm={showContactForm} setShowContactForm={setShowContactForm} />
         <Footer />
       </div>
+      <BackgroundGrid />
     </div>
   );
 }
