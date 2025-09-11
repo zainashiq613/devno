@@ -13,7 +13,7 @@ function About({ showContactForm, setShowContactForm }) {
       >
         <h1 className="lg:text-[40px] text-3xl text-center text-text-dark font-semibold">
           Ready to{' '}
-          <span className="text-primary">
+          <span className="text-[#176aea]">
             Transform Your <br /> Business
           </span>
           ?
@@ -44,7 +44,7 @@ function About({ showContactForm, setShowContactForm }) {
               style={{
                 boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
               }}
-              className="lg:w-[70%] w-full bg-[#ECEDF1] rounded-2xl md:p-7 p-5 flex flex-col gap-7 items-center"
+              className="lg:w-[70%] w-full bg-white rounded-2xl md:p-7 p-5 flex flex-col gap-7 items-center"
             >
               <h3 className="text-text-dark text-center text-3xl font-semibold">Contact</h3>
               <div className="w-full grid grid-cols-2 gap-7">

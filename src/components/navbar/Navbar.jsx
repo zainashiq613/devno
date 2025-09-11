@@ -12,7 +12,7 @@ function Navbar({ setShowContactForm }) {
   console.log(pathname);
 
   const navLinks = [
-    { id: '1', link: '', title: 'Home' },
+    { id: '1', link: '#home', title: 'Home' },
     { id: '2', link: '#process', title: 'Process' },
     { id: '3', link: '#solutions', title: 'Solutions' },
     { id: '4', link: '#services', title: 'Services' },
@@ -44,8 +44,8 @@ function Navbar({ setShowContactForm }) {
   return (
     <div className="w-full fixed top-0 left-0 z-20 bg-transparent px-5 sm:px-10 lg:px-20 xl:px-[140px] py-4 transition duration-500 flex flex-col items-center justify-center">
       <div
-        className="w-full max-w-[1512px] shadow bg-[#ECEDF1] rounded-[40px] flex items-center justify-between py-3 px-4 
-        [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF]"
+        className="w-full max-w-[1512px] shadow bg-white rounded-[40px] flex items-center justify-between py-3 px-4 
+        [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40]"
       >
         <img src="/devno-logo.png" alt="Logo" className="h-8 sm:h-10" />
 
@@ -55,7 +55,7 @@ function Navbar({ setShowContactForm }) {
               key={item.id}
               href={`${item?.link || '#home'}`}
               className={`text-sm px-4 py-2 rounded-3xl ${
-                item.link === pathname?.hash
+                (!pathname?.hash && item.link === '#home') || item.link === pathname?.hash
                   ? 'border border-primary text-primary'
                   : 'text-gray-700 hover:text-primary'
               }`}

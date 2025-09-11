@@ -108,7 +108,7 @@ const SubmitAnimation = ({ title, desc }) => {
   return (
     <div
       style={{ boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF' }}
-      className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-15 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
+      className="bg-white col-span-2 lg:col-span-1 py-15 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
     >
       <div
         ref={innerContainerRef}
@@ -195,7 +195,7 @@ const SubmitAnimation = ({ title, desc }) => {
           <button
             ref={buttonRef}
             onClick={handleButtonClick}
-            className="bg-primary text-white rounded-3xl px-4 py-2 flex items-center justify-center relative"
+            className="bg-primary cursor-pointer text-white rounded-3xl px-4 py-2 flex items-center justify-center relative"
           >
             {buttonContent}
             {progress > 0 && progress < 100 && (

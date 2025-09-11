@@ -54,7 +54,10 @@ function Hero() {
               <FaStar />
             </div>
             <p>
-              Loved by <span className="text-primary">60+ clients</span>
+              Loved by{' '}
+              <span className="text-primary">
+                <span className="text-[#176aea]">200+</span> clients
+              </span>
             </p>
           </div>
         </div>

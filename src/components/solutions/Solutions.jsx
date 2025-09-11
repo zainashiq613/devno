@@ -39,14 +39,14 @@ function Solutions() {
           style={{
             boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
           }}
-          className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-15 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
+          className="bg-white col-span-2 lg:col-span-1 py-15 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
         >
           <div className="relative w-[316px] aspect-square rounded-xl flex items-center justify-center">
             <div
               style={{
                 boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
               }}
-              className="px-5 py-5 bg-[#ECEDF1] rounded-xl flex items-center justify-center z-10 transition-all transform duration-300 hover:scale-120 cursor-pointer"
+              className="px-5 py-5 bg-white rounded-xl flex items-center justify-center z-10 transition-all transform duration-300 hover:scale-120 cursor-pointer"
             >
               <img src={'/Frame 1171274976.png'} alt="" />
             </div>
@@ -76,7 +76,7 @@ function Solutions() {
 
                     <li
                       key={item.id}
-                      className="bg-[#ECEDF1] z-2 absolute"
+                      className="bg-white z-2 absolute"
                       style={{
                         top: '50%',
                         left: '50%',
@@ -87,7 +87,7 @@ function Solutions() {
                         style={{
                           boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
                         }}
-                        className="flex px-5 py-5 rounded-xl items-center justify-center transition-all transform duration-300 hover:scale-120 cursor-pointer"
+                        className="bg-white flex px-5 py-5 rounded-xl items-center justify-center transition-all transform duration-300 hover:scale-120 cursor-pointer"
                       >
                         <img src={item.icon} alt={item.name} />
                       </div>
@@ -110,7 +110,7 @@ function Solutions() {
           style={{
             boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
           }}
-          className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-12 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
+          className="bg-white col-span-2 lg:col-span-1 py-12 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
         >
           <div
             onMouseEnter={handleScroll}
@@ -132,7 +132,7 @@ function Solutions() {
                 </div>
               </div>
 
-              <div className="flex items-center bg-[#ECEDF1] px-2 py-2 rounded-full mt-6 shadow [box-shadow:inset_0_3px_3px_#6D7AFF40,_inset_0_-3px_8px_#FAFBFF]">
+              <div className="flex items-center bg-white px-2 py-2 rounded-full mt-6 shadow [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40]">
                 <input
                   type="text"
                   className="flex-1 border-none outline-none bg-transparent px-3 text-sm"
@@ -161,7 +161,7 @@ function Solutions() {
           style={{
             boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
           }}
-          className="bg-[#ECEDF1] col-span-2 lg:col-span-1 py-12 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
+          className="bg-white col-span-2 lg:col-span-1 py-12 flex flex-col px-7 gap-8 justify-center items-center rounded-3xl"
         >
           <HoverIconsWithShapes />
 
@@ -293,14 +293,11 @@ export function HoverIconsWithShapes() {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative flex items-center cursor-pointer overflow-hidden justify-center w-full"
+      className="relative  flex items-center rounded-2xl cursor-pointer overflow-hidden justify-center w-full"
     >
       <div
-        style={{
-          boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-        }}
         ref={containerRef}
-        className="bg-[#ECEDF1] border border-[#89898938] rounded-2xl p-5 w-full flex flex-col gap-2.5  relative z-10"
+        className="bg-white border border-[#89898938] rounded-2xl p-5 w-full flex flex-col gap-2.5  relative z-10"
       >
         <Skeleton baseColor="#D4D4D4" className="!rounded-3xl" height="15px" />
         <div className="grid grid-cols-8 gap-5 grid-rows-3">
@@ -385,11 +382,11 @@ export function HoverIconsWithShapes() {
       <div className="absolute flex flex-col items-center w-full -space-y-3 z-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
           ref={(el) => (shapesRef.current[0] = el)}
-          className="w-[80%] border border-[#89898938] h-20 bg-[#ECEDF1] rounded-3xl opacity-0 scale-50"
+          className="w-[80%] border border-[#89898938] h-20 bg-white rounded-3xl opacity-0 scale-50"
         />
         <div
           ref={(el) => (shapesRef.current[1] = el)}
-          className="w-[90%] border border-[#89898938] h-20 bg-[#ECEDF1] rounded-3xl opacity-0 scale-50"
+          className="w-[90%] border border-[#89898938] h-20 bg-white rounded-3xl opacity-0 scale-50"
         />
       </div>
     </div>

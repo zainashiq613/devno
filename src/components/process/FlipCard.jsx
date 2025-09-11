@@ -93,7 +93,7 @@ function FlipCard() {
         style={{
           boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
         }}
-        className="relative w-full bg-[#ECEDF1] rounded-3xl grid grid-cols-12 gap-4 px-6 py-9 transition-transform duration-500 transform group-hover:scale-70 group-hover:-rotate-x-40 group-hover:-rotate-z-30"
+        className="relative w-full bg-white rounded-3xl grid grid-cols-12 gap-4 px-6 py-9 transition-transform duration-500 transform group-hover:scale-70 group-hover:-rotate-x-40 group-hover:-rotate-z-30"
       >
         <div className="flex flex-col col-span-1 gap-3 w-full">
           {Array.from({ length: 10 }).map((_, i) => (
