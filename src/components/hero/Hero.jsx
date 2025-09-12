@@ -1,9 +1,9 @@
 import { FaStar } from 'react-icons/fa';
 import Button from '../small/Button';
 
-function Hero() {
+function Hero({ setShowContactForm }) {
   return (
-    <div id="home" className="hero h-[100vh] flex items-center pt-20 justify-center">
+    <div id="home" className="hero flex items-center pt-30 justify-center">
       <div className="flex flex-col gap-8 lg:gap-12 items-center">
         <div className="flex flex-col gap-4 lg:gap-6">
           <h1 className="text-3xl lg:text-6xl text-center text-[#176aea] font-semibold">
@@ -17,7 +17,13 @@ function Hero() {
           </p>
         </div>
         <div>
-          <Button text={'Book A Call'} />
+          <a
+            href="#contact"
+            className="bg-primary cursor-pointer hover:bg-black transition-all duration-500 text-white px-6 py-3 rounded-3xl text-base [box-shadow:5px_5px_10px_0px_#A6ABBD80,_-5px_-5px_10px_0px_#FAFBFF]"
+            onClick={() => setShowContactForm(true)}
+          >
+            Book A Call
+          </a>
         </div>
         <div className="flex flex-wrap items-center lg:justify-normal justify-center gap-5">
           <div

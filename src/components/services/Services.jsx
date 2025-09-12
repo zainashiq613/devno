@@ -98,7 +98,7 @@ const data = [
   },
 ];
 
-function Services() {
+function Services({ setShowContactForm }) {
   const scrollRef = useRef(null);
   const [autoScrollDirection, setAutoScrollDirection] = useState(1);
 
@@ -130,8 +130,13 @@ function Services() {
   return (
     <div className="w-full py-10">
       <div className="flex flex-col gap-10 items-center">
-        <Button text={'Book a 15-min call'} />
-
+        <a
+          href="#contact"
+          className="bg-primary cursor-pointer hover:bg-black transition-all duration-500 text-white px-6 py-3 rounded-3xl text-base [box-shadow:5px_5px_10px_0px_#A6ABBD80,_-5px_-5px_10px_0px_#FAFBFF]"
+          onClick={() => setShowContactForm(true)}
+        >
+          Book a 15-min call
+        </a>
         <div className="grid gap-8 w-full overflow-hidden">
           <div ref={scrollRef} className="flex py-2 rounded-2xl gap-8 overflow-hidden">
             {data.map((item) => (
@@ -160,7 +165,6 @@ function Services() {
             ))}
           </div>
         </div>
-
         <div className="flex gap-4 items-center mt-4">
           <button
             onClick={() => scroll(-410)}
@@ -168,7 +172,6 @@ function Services() {
           >
             <FaArrowLeft />
           </button>
-
           <button
             onClick={() => scroll(410)}
             className="cursor-pointer [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-white"

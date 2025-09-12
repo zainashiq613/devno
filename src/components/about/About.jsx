@@ -85,19 +85,19 @@ function About({ showContactForm, setShowContactForm }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className={`${selectedDate ? 'lg:w-full grid grid-cols-12 h-[481px]' : ''} ${
+              className={`${selectedDate ? 'lg:w-full grid grid-cols-12 xl:h-[481px]' : ''} ${
                 showForm ? 'h-fit' : ''
-              } lg:w-[70%] w-full bg-white shadow-2xl rounded-md grid grid-cols-2`}
+              } xl:w-[85%] w-full bg-white shadow-2xl rounded-md grid grid-cols-12`}
             >
               {complete ? (
-                <div className="col-span-12 py-15 pb-30 flex flex-col gap-5 items-center">
+                <div className="p-5 col-span-12 py-15 pb-30 flex flex-col gap-5 items-center">
                   <h3 className="flex items-center gap-2 text-2xl font-semibold text-[#0a0a0a]">
                     <span>
                       <FaCheckCircle fill="#038164" />
                     </span>
                     You are scheduled
                   </h3>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-sm text-center text-text-secondary">
                     A calendar invitation has been sent to your email address.
                   </p>
                   <p className="cursor-pointer text-text-secondary text-sm flex gap-2 items-center border py-1 px-2 rounded-3xl">
@@ -136,7 +136,11 @@ function About({ showContactForm, setShowContactForm }) {
                 </div>
               ) : (
                 <>
-                  <div className={`${selectedDate ? 'col-span-4' : ''} border-r border-[#a1a1a1]`}>
+                  <div
+                    className={`${
+                      selectedDate ? 'col-span-12 lg:col-span-4' : 'col-span-12 lg:col-span-6'
+                    } lg:border-r border-[#a1a1a1]`}
+                  >
                     <div className="relative w-full flex items-center justify-center py-20 border-b border-[#a1a1a1]">
                       <p
                         onClick={() => setShowForm(false)}
@@ -172,13 +176,17 @@ function About({ showContactForm, setShowContactForm }) {
                     </div>
                   </div>
                   {showForm ? (
-                    <div className="p-6 col-span-8">
+                    <div className="p-6 col-span-12 lg:col-span-8">
                       <DetailForm setComplete={setComplete} />
                     </div>
                   ) : (
                     <>
                       <div
-                        className={`${selectedDate ? 'col-span-5' : ''} p-5 flex flex-col gap-6`}
+                        className={`${
+                          selectedDate
+                            ? 'col-span-12 md:col-span-8 lg:col-span-5'
+                            : 'col-span-12 lg:col-span-6'
+                        } p-5 flex flex-col gap-6`}
                       >
                         <h3 className="text-xl text-[#0a2540] font-semibold">
                           Select a Date & Time
@@ -190,8 +198,8 @@ function About({ showContactForm, setShowContactForm }) {
                         />
                       </div>
                       {selectedDate && (
-                        <div className="col-span-3 h-fit flex flex-col gap-3 pt-18 px-6">
-                          <h3 className="text-[15px] font-medium text-[#0a2540]">
+                        <div className="col-span-12 md:col-span-4 lg:col-span-3 h-fit flex flex-col gap-3 md:pt-18 px-6">
+                          <h3 className="text-xs font-medium text-[#0a2540]">
                             {selectedDate ? format(selectedDate, 'EEEE, MMMM d') : null}
                           </h3>
                           <div className="px-5 h-[50vh] overflow-auto flex flex-col gap-3">

@@ -17,7 +17,7 @@ function App() {
     <div className="!background-color px-6 sm:px-10 flex items-center justify-center lg:px-10 xl:px-35 ">
       <div className="relative max-w-[1512px]">
         <Navbar showContactForm={showContactForm} setShowContactForm={setShowContactForm} />
-        <Hero />
+        <Hero setShowContactForm={setShowContactForm} />
         <Title
           id={'process'}
           section={'Process'}
@@ -41,7 +41,7 @@ function App() {
           spanText={'We Do'}
           desc={'From concept to execution, see how we bring ideas to life in your business'}
         />
-        <Services />
+        <Services setShowContactForm={setShowContactForm} />
         <Title
           id={'technologies'}
           section={'Technologies'}
