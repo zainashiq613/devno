@@ -52,7 +52,7 @@ const techIcons = [
   { id: 48, name: 'Nest', icon: 'nestjs 2.png' },
   { id: 49, name: 'Stripe', icon: 'Group 1000002179.png' },
   { id: 50, name: 'Premier', icon: 'adobe-premier 1.png' },
-  { id: 51, name: 'SAAS', icon: 'sass 1.png' },
+  { id: 51, name: 'SASS', icon: 'sass 1.png' },
   { id: 52, name: 'Creative Cloud', icon: 'adobe-creative-cloud 1.png' },
 ];
 

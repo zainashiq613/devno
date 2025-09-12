@@ -47,7 +47,7 @@ function Navbar({ setShowContactForm }) {
         className="w-full max-w-[1512px] shadow bg-white rounded-[40px] flex items-center justify-between py-3 px-4 
         [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40]"
       >
-        <img src="/devno-logo.png" alt="Logo" className="h-8 sm:h-10" />
+        <img src="/devno-logo.png" alt="Logo" className="w-35 xl:w-45" />
 
         <div className="hidden lg:flex items-center gap-2.5">
           {navLinks.map((item) => (

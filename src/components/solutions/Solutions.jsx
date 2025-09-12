@@ -117,7 +117,7 @@ function Solutions() {
             onMouseLeave={backScroll}
             className="rounded-3xl group cursor-pointer w-full relative"
           >
-            <div className="mx-auto p-4 flex flex-col justify-between">
+            <div className="mx-auto md:p-4 flex flex-col justify-between">
               <div ref={ref} className="flex flex-col pt-15 h-[240px] overflow-hidden gap-12">
                 <div className="bg-indigo-500 text-white p-3 rounded-2xl self-start max-w-[80%] shadow">
                   Hi! How can I help you?
@@ -132,13 +132,13 @@ function Solutions() {
                 </div>
               </div>
 
-              <div className="flex items-center bg-white px-2 py-2 rounded-full mt-6 shadow [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40]">
+              <div className="flex items-center bg-white md:px-2 py-2 rounded-full mt-6 shadow [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40]">
                 <input
                   type="text"
-                  className="flex-1 border-none outline-none bg-transparent px-3 text-sm"
+                  className="md:flex-1 border-none outline-none bg-transparent md:px-3 text-sm"
                   disabled
                 />
-                <button className="text-indigo-500 p-5 rounded-full bg-white text-xl cursor-not-allowed">
+                <button className="text-indigo-500 border p-2.5 md:p-5 rounded-full bg-white text-xl cursor-not-allowed">
                   <FaPaperPlane />
                 </button>
               </div>
