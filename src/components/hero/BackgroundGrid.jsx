@@ -17,7 +17,7 @@ function BackgroundGrid() {
 
       {/* grid overlay with same fade bottom */}
       <div
-        className="grid grid-cols-31 md:grid-cols-42 lg:grid-cols-50 xl:grid-cols-56 gap-[1px] w-full h-full relative"
+        className="grid grid-cols-[repeat(auto-fit,minmax(20px,1fr))] auto-rows-[20px] md:grid-cols-[repeat(auto-fit,minmax(27px,1fr))] md:auto-rows-[27px] overflow-hidden gap-[1px] w-full h-full relative"
         style={{
           WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))',
           WebkitMaskRepeat: 'no-repeat',
@@ -27,7 +27,7 @@ function BackgroundGrid() {
           maskSize: '100% 100%',
         }}
       >
-        {Array.from({ length: 1200 }).map((_, i) => (
+        {Array.from({ length: 8200 }).map((_, i) => (
           <div key={i} className="bg-white" />
         ))}
       </div>

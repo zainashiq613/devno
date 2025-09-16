@@ -186,7 +186,7 @@ function About({ showContactForm, setShowContactForm }) {
                           selectedDate
                             ? 'col-span-12 md:col-span-8 lg:col-span-5'
                             : 'col-span-12 lg:col-span-6'
-                        } p-5 flex flex-col gap-6`}
+                        } p-5 flex flex-col gap-6 pb-20`}
                       >
                         <h3 className="text-xl text-[#0a2540] font-semibold">
                           Select a Date & Time
