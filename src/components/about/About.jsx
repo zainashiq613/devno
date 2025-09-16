@@ -85,9 +85,9 @@ function About({ showContactForm, setShowContactForm }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className={`${selectedDate ? 'lg:w-full grid grid-cols-12 xl:h-[481px]' : ''} ${
-                showForm ? 'h-fit' : ''
-              } xl:w-[85%] w-full bg-white shadow-2xl rounded-md grid grid-cols-12`}
+              className={`${selectedDate ? 'lg:w-full grid grid-cols-12' : 'h-fit'} ${
+                showForm ? '!h-fit' : ''
+              } w-full bg-white shadow-2xl rounded-md grid grid-cols-12`}
             >
               {complete ? (
                 <div className="p-5 col-span-12 py-15 pb-30 flex flex-col gap-5 items-center">
@@ -176,7 +176,7 @@ function About({ showContactForm, setShowContactForm }) {
                     </div>
                   </div>
                   {showForm ? (
-                    <div className="p-6 col-span-12 lg:col-span-8">
+                    <div className="p-6 h-fit col-span-12 lg:col-span-8">
                       <DetailForm setComplete={setComplete} />
                     </div>
                   ) : (

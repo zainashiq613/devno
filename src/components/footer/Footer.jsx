@@ -1,6 +1,8 @@
 import Button from '../small/Button';
 
 function Footer() {
+  const date = new Date();
+  console.log(date.getFullYear());
   return (
     <div className="py-10">
       <div className="flex flex-col gap-7 items-center">
@@ -26,7 +28,7 @@ function Footer() {
                 id="name"
                 type="text"
                 placeholder="Jane Smith"
-                className="bg-white text-text-secondary text-base border border-[#E4E4E7] py-5 px-4 rounded-xl"
+                className="bg-white text-text-secondary text-base border border-[#E4E4E7] py-3 px-4 rounded-md outline-none"
               />
             </div>
             <div className="col-span-2 md:col-span-1 flex flex-col gap-2">
@@ -37,7 +39,7 @@ function Footer() {
                 id="email"
                 type="email"
                 placeholder="jane@mail.com"
-                className="bg-white text-text-secondary text-base border border-[#E4E4E7] py-5 px-4 rounded-xl"
+                className="bg-white text-text-secondary text-base border border-[#E4E4E7] py-3 px-4 rounded-md outline-none"
               />
             </div>
             <div className="col-span-2 flex flex-col gap-2">
@@ -48,7 +50,7 @@ function Footer() {
                 id="message"
                 placeholder="Your message..."
                 rows={6}
-                className="bg-white text-text-secondary text-base border border-[#E4E4E7] py-5 px-4 rounded-xl"
+                className="bg-white text-text-secondary text-base border border-[#E4E4E7] py-3 px-4 rounded-md outline-none"
               />
             </div>
           </div>
@@ -57,13 +59,13 @@ function Footer() {
           </div>
         </div>
         <div className="w-full flex flex-col md:flex-row gap-7 items-center justify-between">
-          <p className="text-lg text-text-dark">© Copyright 2021 Devno Sol.</p>
+          <p className="text-lg text-text-dark">© Copyright {date.getFullYear()} Devno Sol.</p>
           <div className="flex items-center gap-5">
             <a
               style={{
                 boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
               }}
-              href="#"
+              href="https://www.linkedin.com/company/devnosol/"
               className="bg-white px-4 py-4 rounded-lg transition-all transform hover:scale-120 duration-300"
             >
               <img src="/linkedin 1.png" alt="" />
@@ -72,19 +74,10 @@ function Footer() {
               style={{
                 boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
               }}
-              href="#"
+              href="https://www.behance.net/tetraintech"
               className="bg-white px-4 py-4 rounded-lg transition-all transform hover:scale-120 duration-300"
             >
-              <img src="/instagram 1.png" alt="" />
-            </a>
-            <a
-              style={{
-                boxShadow: '10px 10px 20px 0px #A6ABBD40, -10px -10px 20px 0px #FAFBFF',
-              }}
-              href="#"
-              className="bg-white px-4 py-4 rounded-lg transition-all transform hover:scale-120 duration-300"
-            >
-              <img src="/facebook 1.png" alt="" />
+              <img className="w-9" src="/behance-icon.png" alt="" />
             </a>
           </div>
         </div>

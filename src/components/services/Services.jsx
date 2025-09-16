@@ -1,5 +1,3 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Button from '../small/Button';
 import UiUx from '../../assets/svgs/UiUx';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Software from '../../assets/svgs/Software';
@@ -9,6 +7,7 @@ import WordPress from '../../assets/svgs/WordPress';
 import SEO from '../../assets/svgs/SEO';
 import Content from '../../assets/svgs/Content';
 import Graphic from '../../assets/svgs/Graphic';
+import { useKeenSlider } from 'keen-slider/react';
 
 const data = [
   {
@@ -98,82 +97,77 @@ const data = [
   },
 ];
 
-function Services({ setShowContactForm }) {
-  const scrollRef = useRef(null);
-  const [autoScrollDirection, setAutoScrollDirection] = useState(1);
-
-  const scroll = (scrollOffset) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: scrollOffset, behavior: 'smooth' });
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!scrollRef.current) return;
-
-      // auto scroll by 410px
-      scrollRef.current.scrollBy({ left: 410 * autoScrollDirection, behavior: 'smooth' });
-
-      // check boundaries → reverse direction if reached end
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 5;
-      const isAtStart = scrollLeft <= 0;
-
-      if (isAtEnd) setAutoScrollDirection(-1);
-      if (isAtStart) setAutoScrollDirection(1);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, [autoScrollDirection]);
+function Services() {
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: true,
+    renderMode: 'performance',
+    slides: {
+      perView: 3, // default (desktop ≥1024px)
+      spacing: 20,
+    },
+    breakpoints: {
+      '(max-width: 767px)': {
+        slides: { perView: 1, spacing: 10 }, // mobile <768px
+      },
+      '(min-width: 768px) and (max-width: 1220px)': {
+        slides: { perView: 2, spacing: 15 }, // tablet 768–1023px
+      },
+    },
+    drag: true,
+    created: (s) => {
+      setInterval(() => {
+        s.next();
+      }, 3000);
+    },
+  });
 
   return (
     <div className="w-full py-10">
-      <div className="flex flex-col gap-10 items-center">
+      <div className="flex flex-col gap-7 items-center">
         <a
           href="#contact"
-          className="bg-primary cursor-pointer hover:bg-black transition-all duration-500 text-white px-6 py-3 rounded-3xl text-base [box-shadow:5px_5px_10px_0px_#A6ABBD80,_-5px_-5px_10px_0px_#FAFBFF]"
-          onClick={() => setShowContactForm(true)}
+          className="bg-primary cursor-pointer hover:bg-black transition-all duration-500 text-white px-6 py-3 rounded-3xl"
         >
           Book a 15-min call
         </a>
-        <div className="grid gap-8 w-full overflow-hidden">
-          <div ref={scrollRef} className="flex py-2 rounded-2xl gap-8 overflow-hidden">
-            {data.map((item) => (
-              <div key={item.id} className="p-6 rounded-2xl flex flex-col gap-5 bg-white shadow-lg">
-                <div className="flex flex-col gap-3 items-center">
-                  {item.icon}
-                  <h1 className="w-[330px] md:w-[275px] lg:w-[330px] font-semibold text-lg lg:text-xl text-text-dark text-center">
-                    {item.title}
-                  </h1>
+
+        <div
+          ref={sliderRef}
+          className="keen-slider py-6 flex w-[90vw] overflow-hidden max-w-[1512px]"
+        >
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className="keen-slider__slide p-6 rounded-2xl flex flex-col gap-5 bg-white shadow-lg"
+            >
+              <div className="flex flex-col gap-3 items-center">
+                {item.icon}
+                <h1 className="w-[330px] md:w-[275px] lg:w-[330px] font-semibold text-lg lg:text-xl text-text-dark text-center">
+                  {item.title}
+                </h1>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div>
+                  <p className="text-sm lg:text-lg font-medium text-[#2B2B2B]">{item.subTitle1}</p>
+                  <span className="text-xs lg:text-sm text-text-secondary">{item.desc1}</span>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <div>
-                    <p className="text-sm lg:text-lg font-medium text-[#2B2B2B]">
-                      {item.subTitle1}
-                    </p>
-                    <span className="text-xs lg:text-sm text-text-secondary">{item.desc1}</span>
-                  </div>
-                  <div>
-                    <p className="text-sm lg:text-lg font-medium text-[#2B2B2B]">
-                      {item.subTitle2}
-                    </p>
-                    <span className="text-xs lg:text-sm text-text-secondary">{item.desc2}</span>
-                  </div>
+                <div>
+                  <p className="text-sm lg:text-lg font-medium text-[#2B2B2B]">{item.subTitle2}</p>
+                  <span className="text-xs lg:text-sm text-text-secondary">{item.desc2}</span>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-        <div className="flex gap-4 items-center mt-4">
+        <div className="flex gap-4">
           <button
-            onClick={() => scroll(-410)}
+            onClick={() => instanceRef.current?.prev()}
             className="cursor-pointer [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-white"
           >
             <FaArrowLeft />
           </button>
           <button
-            onClick={() => scroll(410)}
+            onClick={() => instanceRef.current?.next()}
             className="cursor-pointer [box-shadow:inset_0_1px_8px_#6D7AFF40,_inset_0_-1px_3px_#6D7AFF40] px-4 py-4 rounded-full flex items-center justify-center text-primary shadow-md bg-white"
           >
             <FaArrowRight />
