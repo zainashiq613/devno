@@ -133,7 +133,7 @@ function Services() {
 
         <div
           ref={sliderRef}
-          className="keen-slider py-6 flex w-[90vw] overflow-hidden max-w-[1512px]"
+          className="keen-slider py-6 flex !w-[90vw] overflow-hidden max-w-[1512px]"
         >
           {data.map((item) => (
             <div
