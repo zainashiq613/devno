@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 
-function DetailForm({ setComplete }) {
+function DetailForm({ setComplete, id }) {
   const [addGuests, setAddGuests] = useState(false);
   return (
     <div className="w-full flex flex-col gap-5">
       <h3 className="text-2xl font-semibold text-[#176aea]">Enter Details</h3>
-      <form onSubmit={() => setComplete(true)} className="flex flex-col gap-5">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setComplete(true);
+          if (id) {
+            localStorage.setItem('selectedTime', id);
+          }
+        }}
+        className="flex flex-col gap-5"
+      >
         <div className="flex flex-col gap-1.5">
           <label htmlFor="" className="text-base font-medium text-[#0a0a0a]">
             Name *
