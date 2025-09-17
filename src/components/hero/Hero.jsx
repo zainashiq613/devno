@@ -25,7 +25,7 @@ function Hero({ setShowContactForm }) {
             Book A Call
           </a>
         </div>
-        <div className="flex flex-wrap items-center lg:justify-normal justify-center gap-5">
+        <div className="mt-8 flex flex-wrap items-center lg:justify-normal justify-center gap-5">
           <div
             className="flex items-center space-x-[-10px] p-2 bg-white rounded-full 
             [box-shadow:5px_5px_10px_#6D7AFF40,_-5px_-5px_10px_#FAFBFF]"

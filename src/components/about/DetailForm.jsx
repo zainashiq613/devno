@@ -17,7 +17,7 @@ function DetailForm({ setComplete, id }) {
       >
         <div className="flex flex-col gap-1.5">
           <label htmlFor="" className="text-base font-medium text-[#0a0a0a]">
-            Name *
+            Name <span className="text-red-500">*</span>
           </label>
           <input
             required
@@ -28,7 +28,7 @@ function DetailForm({ setComplete, id }) {
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="" className="text-base font-medium text-[#0a0a0a]">
-            Email *
+            Email <span className="text-red-500">*</span>
           </label>
           <input
             required
